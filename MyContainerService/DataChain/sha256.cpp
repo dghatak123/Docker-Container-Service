@@ -528,7 +528,7 @@ void SHA256::processBuffer() {
 /// return latest hash as 16 hex characters
 /* Modified from original source code. Using char* instead of string. */
 char* SHA256::getHash() {
-     cout << "Inside getHash" << endl;
+     //cout << "Inside getHash" << endl;
     // convert hash to string
     static const char dec2hex[16 + 1] = "0123456789abcdef";
 
@@ -559,7 +559,7 @@ char* SHA256::getHash() {
     }
     // zero-terminated string
     hashBuffer[offset] = 0;
-    cout << "Return from getHash "<<endl;
+    //cout << "Return from getHash "<<endl;
 
     return hashBuffer;
 }

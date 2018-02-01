@@ -1,4 +1,5 @@
 #include "DataBlockChain.h"
+#include <unistd.h>
 
 int main() {
     MyDataBlockChain bChain = MyDataBlockChain();
@@ -14,6 +15,8 @@ int main() {
     cout << "Mining block 3..." << endl;
     const string _l_data3[3] = {"Harry P", "01011990", "San Diego"};
     bChain.addDataBlock(MyDataBlock(3, _l_data3));
+
+    sleep(3600);
  
     return 0;
 }

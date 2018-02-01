@@ -31,24 +31,24 @@ void MyDataBlock::mineDataBlock(uint32_t _l_difficulty) {
   //do {
     _c_Nonce++;
     _c_hash = calculateHash();
-    cout << "Hash "<<_c_hash <<endl;
-    cout << "str "<<str<<endl;
+    //cout << "Hash "<<_c_hash <<endl;
+    //cout << "str "<<str<<endl;
   //} while ( _c_hash.substr(0,_l_difficulty) != str);
   
-  cout << "Block mined " << _c_hash << endl;
+  //cout << "Block mined " << _c_hash << endl;
 }
 
 inline string MyDataBlock::calculateHash() const {
     stringstream ss;
-    cout << "Inside calculateHash()"<< endl;
-    cout << _c_index << _c_time << endl;
+    //cout << "Inside calculateHash()"<< endl;
+    //cout << _c_index << _c_time << endl;
     ss << _c_index << _c_time << _c_data[0] <<_c_data[1] << _c_data[2] << _c_Nonce << _c_prevDataHash;
     //char *s_str = new char[500];
     //strcpy(s_str,ss.str().c_str());
     SHA256 l_sha;
     size_t numBytes = sizeof(ss.str().c_str());
-    cout << "String Stream value "<<ss.str().c_str()<<endl;
-    cout << "numBytes "<<numBytes << endl;
+    //cout << "String Stream value "<<ss.str().c_str()<<endl;
+    //cout << "numBytes "<<numBytes << endl;
     //return l_sha.getHash(ss.str().c_str(),numBytes);
     return string(l_sha.getSHA256(ss.str().c_str(),numBytes));
 }
